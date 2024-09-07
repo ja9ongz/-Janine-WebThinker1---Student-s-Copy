@@ -12,7 +12,57 @@
         <link href="script/projects.css" rel="stylesheet"/>
     </head>
     <body class="bg-secondary bg-opacity-10" style="min-width:320px">
+        
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label name="fName">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="fName" name="fName" placeholder="E.g. John Doe" required/>
+                </div>
+
+                <div class="col">
+                    <label name="lName">Last Name</label>
+                    <input type="text" class="form-control" id="lName" name="lName"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label name="contact">Contact</label>
+                    <input type="number" class="form-control" id="contact" name="contact"/>
+                    <p id="contactErrorMsg" class="d-none text-danger">Invalid Number</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <label name="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email"/>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="submitBtn" onclick="validate()">Submit</button>
+        </form>
+
+
+
         <script>
+            let validate = () => {
+                let num = document.getElementById("contact"); //contact input element
+                let errorMsg = document.getElementById("contactErrorMsg"); //get the error msg input id
+
+                //0 - the field is empty
+                if(num.value.length == 0){
+                    num.classList = "form-control is-invalid"; //make the border red for input field
+                    //all about your error msg
+                    errorMsg.classList = "text-danger";
+                }
+                else{
+                    num.classList = "form-control";
+                    errorMsg.classList = "d-none text-danger";
+                    console.log("All good");
+                }
+            };
+
+
             let helloWorld = "Hello World!";
 
             console.log(helloWorld);
