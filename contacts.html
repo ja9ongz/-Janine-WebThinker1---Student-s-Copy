@@ -49,20 +49,37 @@
 		</div>
 		<!-- Key section -->
 		<form class="container py-3">
-			<div class="row gy-3">
-				<!-- Label: Name*
-						 Text Input field -->
+			<div class="row gy-3 py-3">
+				<div class="col-6">
+					<label name="fName">Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="fName" name="fName" placeholder="E.g. John Doe" required/>
+					<p id="nameErrorMsg" class="d-none text-danger">Invalid field, name cannot be empty</p>
+				</div>
 
-				<!-- Label: Email Address*
-						 Email Input field -->
-
-				<!-- Label: Subject*
-						 Text Input field with placeholder text "Enquiry on how to code"-->
-
-				<!-- Label: Message*
-						 Textarea field with the row attribute of value 5-->
+				<div class="col-6">
+					<label name="fEmail">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="fEmail" name="fEmail" placeholder="E.g. xxx@email.com" required/>
+					<p id="emailErrorMsg" class="d-none text-danger">Invalid field, email cannot be empty</p>
+				</div>
 			</div>
-			<!-- Code a blue "Send" button inside a <div> according to the criteria stated -->
+
+			<div class="row gy-3 py-3">
+				<div class="col-12">
+					<label name="fSubject">Subject <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="fSubject" name="fSubject" placeholder="E.g. Enquiry on Coding Class" required/>
+					<p id="subjectErrorMsg" class="d-none text-danger">Invalid field, subject cannot be empty</p>
+				</div>
+			</div>
+
+			<div class="row gy-3 py-3">
+				<div class="col-12">
+					<label name="fMessage">Message <span class="text-danger">*</span></label>
+					<textarea class="form-control" id="fMessage" name="fMessage" placeholder="Enquiry Message Here" rows="5" required></textarea>
+					<p id="messageErrorMsg" class="d-none text-danger">Invalid field, message cannot be empty</p>
+				</div>
+			</div>
+
+			<button type="button" class="btn btn-primary" id="submitButton" onclick="validate()">Send</button>
 		</form>
 	</article>
 	<!-- End of coding region -->
