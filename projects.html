@@ -75,13 +75,28 @@
 					<script>
 						const canvas = document.getElementById("canvasBoard")
 						let ctx = canvas.getContext("2d")
-						
+
+						// Finding the middle point of canvas
+						let canvasWidthMiddle = canvas.width / 2
+						let canvasHeightMiddle = canvas.height / 2
+
+						// Styling the cricle
+						ctx.lineWidth = 10
+						ctx.strokeStyle = "rgb(255,0,0)"
+						ctx.fillStyle = "rgb(0,0,255)"
+						// Drawing the circle
+						ctx.beginPath()
+						// ctx.arc(120, 120, 100, 0, 2 * Math.PI) // Sets the midpoint of the circle to (120,120)
+						ctx.arc(canvasWidthMiddle, canvasHeightMiddle, 100, 0, 2 * Math.PI) // Sets the midpoint of the circle to the middle of canvas
+						ctx.stroke()
+						ctx.fill()
+
 						// Square code (with overlap)
-						ctx.fillStyle = "rgb(0, 0, 200, 0.5)"
-						ctx.fillRect(50, 50, 100, 100)
+						// ctx.fillStyle = "rgb(0, 0, 200, 0.5)"
+						// ctx.fillRect(50, 50, 100, 100)
 						
-						ctx.fillStyle = "rgb(200, 0, 0)"
-						ctx.fillRect(10, 10, 100, 100)
+						// ctx.fillStyle = "rgb(200, 0, 0)"
+						// ctx.fillRect(10, 10, 100, 100)
 
 						// Line Code
 						// ctx.beginPath()
