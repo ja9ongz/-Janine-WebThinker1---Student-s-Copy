@@ -76,19 +76,28 @@
 						const canvas = document.getElementById("canvasBoard")
 						let ctx = canvas.getContext("2d")
 
+						// Text
+						ctx.font = "50px Comic Sans MS"
+						ctx.textAlign = "center"
+						let gradient = ctx.createLinearGradient(0,0,400,0)
+						gradient.addColorStop(0, "rgb(255,0,0)")
+						gradient.addColorStop(1, "rgb(255,255,0)")
+						ctx.fillStyle = gradient
+						ctx.fillText("Hello World!", 50, 150)
+
 						// Gradients
 						// Gradient variation 1
 						// let gradient = ctx.createLinearGradient(0,0,400,0)
 						// gradient.addColorStop(0, "rgb(255,0,0)")
+						// gradient.addColorStop(1, "rgb(255,255,0)")
 
 						// Gradient variation 2
-						let gradient = ctx.createRadialGradient(50,50,0,150,150,150)
-						gradient.addColorStop(0, "rgb(0,0,255)")
-						gradient.addColorStop(0.5, "rgb(255,0,0)")
-
-						gradient.addColorStop(1, "rgb(255,255,0)")
-						ctx.fillStyle = gradient
-						ctx.fillRect(10, 10, 300, 200)
+						// let gradient = ctx.createRadialGradient(50,50,0,150,150,150)
+						// gradient.addColorStop(0, "rgb(0,0,255)")
+						// gradient.addColorStop(0.5, "rgb(255,0,0)")
+						// gradient.addColorStop(1, "rgb(255,255,0)")
+						// ctx.fillStyle = gradient
+						// ctx.fillRect(10, 10, 300, 200)
 
 						// Finding the middle point of canvas
 						// let canvasWidthMiddle = canvas.width / 2
